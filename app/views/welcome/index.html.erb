@@ -1,0 +1,34 @@
+<h1>Задачи</h1>
+
+<p>
+    <%=image_tag("plus.jpg", alt: "Plus Image")%>
+</p>
+
+<% Project.all.each do |project| %>
+<p>
+  <%= project.title %>
+</p>
+<ul>
+<% project.todos.each do |todo| %>
+  <li> <%= todo.text %> </li>
+<% end %>
+</ul>
+<% end %>
+
+<div id="div1">
+<%= form_for project_path Todo.create, id: "f1"  do |f| %>
+  <h2>Новая задача</h2>
+  <p>
+    <%= f.text_field :text %>
+    <%= f.check_box :isCompleted, id: "ch1" %>
+  </p>
+  <p>
+    <%= f.collection_select(:project_id, Project.all, :id, :title) %>
+    <%= f.submit %>
+  </p>
+  <p>
+  <a id="a1" href="javascript:void(0)" >Отмена</a>
+  <%= link_to 'Ок', href="javascript:void(0)", id:"a2" %>
+  </p>
+<% end %>
+</div>
