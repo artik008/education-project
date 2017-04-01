@@ -18,15 +18,15 @@
 $(document).ready(function() {
 	$("#div1").hide();
 	$("#ch1").hide();
+	$("#fsb").hide();
 	$("img").bind('click', function() {
 		$("#div1").show();
 	});
 	$("#a1").bind('click', function() {
 		$("#div1").hide();
 	});
-	$("#a2").click(function(event) {
-		event.preventDefault();
-		$("#f1").submit();
+	$("#a2").click(function() {
+		$("#fsb").click();
 		$("#div1").hide();
 	});
 });

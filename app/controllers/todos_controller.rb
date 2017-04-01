@@ -1,16 +1,20 @@
 class TodosController < ApplicationController
-  def create
-    @project = Project.find(params[:project_id])
-    @todo = @project.todos.create(todo_params)
-    redirect_to project_path(@project)
+  def index
+
   end
 
-  def new
-    @todo = Todo.new
+  def create
+    @project = Project.find(params[:project_id].values)
+    @todo = @project.map{|x| x.todos.create(todo_params)}
+    redirect_to root_url
+  end
+  
+  def update
+
   end
  
   private
     def todo_params
-      params.require(:todo).permit(:text, :isCompeted)
+      params.require(:todo).permit(:text)
     end
 end

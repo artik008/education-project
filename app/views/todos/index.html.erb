@@ -16,19 +16,19 @@
 <% end %>
 
 <div id="div1">
-<%= form_for project_path Todo.create, id: "f1"  do |f| %>
+<%= form_for Todo.create, id: "f1" do |f| %>
   <h2>Новая задача</h2>
   <p>
     <%= f.text_field :text %>
     <%= f.check_box :isCompleted, id: "ch1" %>
   </p>
   <p>
-    <%= f.collection_select(:project_id, Project.all, :id, :title) %>
-    <%= f.submit %>
+    <%= collection_select(:project_id, :project_id, Project.all, :id, :title) %>
+    <%= f.submit '', :class => "hidden", :id => "fsb" %>
   </p>
   <p>
   <a id="a1" href="javascript:void(0)" >Отмена</a>
-  <%= link_to 'Ок', href="javascript:void(0)", id:"a2" %>
+  <%= link_to 'Ок', href= "javascript:void(0)", id:"a2" %>
   </p>
 <% end %>
 </div>

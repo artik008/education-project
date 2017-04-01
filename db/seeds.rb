@@ -10,7 +10,6 @@ config = YAML::load_file(seed_file)
 config.each { |prtitle|
 	@project = Project.create!(Hash["title", prtitle["title"]])
 	prtitle["todos"].each { |h|
-	puts h
 	@project.todos.create(h)
 	}
 } 

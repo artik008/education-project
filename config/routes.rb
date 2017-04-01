@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
-  get 'welcome/index'
+  root 'todos#index'
+  post '/', to: 'todos#create'
+  get 'projects/*project_id', to: 'projects#new'
 
-  resources :projects do
-    resources :todos, only: [:show, :create, :update]
-end  
+  resources :projects, only: [:show]
+  resources :todos, only: [:show, :create, :update]
 # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  root 'welcome#index'
 end
