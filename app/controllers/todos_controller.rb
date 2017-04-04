@@ -10,7 +10,10 @@ class TodosController < ApplicationController
   end
   
   def update
-
+    @todo = Todo.find(params[:id])
+    @isCompleted = if @todo.isCompleted == true then false else true end
+    @todo.update({:isCompleted => @isCompleted})
+    redirect_to "/"
   end
  
   private

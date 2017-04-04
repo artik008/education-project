@@ -1,0 +1,160 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_select2
+ *= require_tree .
+ *= require_self
+ */
+
+.project {
+  display: inline-block;
+  vertical-align: top;
+  min-width: 28em;
+  min-height: 4em;
+  margin: 3em;
+  -webkit-box-shadow: 0px 1px 9px -1px rgba(0,0,0,1);
+  -moz-box-shadow: 0px 1px 9px -1px rgba(0,0,0,1);
+  box-shadow: 0px 1px 9px -1px rgba(0,0,0,1);
+}
+
+#title {
+  margin: 1em;
+}
+
+@font-face {
+  font-family: "FlowRegular";
+  src: url("FlowRegular/FlowRegular.eot");
+  src: url("FlowRegular/FlowRegular.eot?#iefix")format("embedded-opentype"),
+  url("FlowRegular/FlowRegular.woff") format("woff"),
+  url("FlowRegular/FlowRegular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+
+#show { 
+  font-family: "FlowRegular"; 
+  margin: 3em;
+}
+
+#Header {
+  top:0px;
+  left:0px;
+  z-index: 102;
+  width:100%;
+  height:8%;
+  color:white;
+  position:fixed;
+  background-color:blue;
+}
+
+#Header h1 {
+  width:100%;
+  height:10%;
+  position: absolute;
+  text-align:center;
+  vertical-align:top;
+}
+
+#Header img {
+  text-align:right;
+  height:60%;
+  position: absolute;
+  right: 3%;
+}
+
+.strike-texttrue {
+text-decoration:line-through;
+}
+
+#div1 {
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 30%;
+  height: 25%;
+  text-align:center;
+  transform: translate(-50%,-50%);
+  position: fixed;
+  z-index: 101;
+  -webkit-box-shadow: -1px -1px 0px 1000px rgba(0,0,0,0.70);
+  -moz-box-shadow: -1px -1px 0px 1000px rgba(0,0,0,0.70);
+  box-shadow: -1px -1px 0px 1000px rgba(0,0,0,0.70);
+  background-color:white;
+}
+
+#body {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+#a2{
+ color:#00c6ff;
+ padding: 2% 15%;
+ text-decoration:none;
+ text-align:center;
+ margin:10px;
+ background-image: linear-gradient(to left,transparent,transparent 50%,#00c6ff 50%,#00c6ff);
+ background-position: 100% 0;
+ background-size: 200% 100%;
+ transition: all .25s ease-in;
+ font: 400 100% tahoma;
+ border: 1px solid #00C6FF;
+}
+
+#a2:hover {
+background-position: 0 0;
+color:#fff;
+}
+
+#a1{
+ color:#00c6ff;
+ padding: 2% 12%;
+ text-decoration:none;
+ text-align:center;
+ margin:1%;
+ background-image: linear-gradient(to left,transparent,transparent 50%, #6e6e6e 50%, #6e6e6e);
+ background-position: 100% 0;
+ background-size: 200% 100%;
+ transition: all .25s ease-in;
+ font: 400 100% tahoma;
+ border: 1px solid  #6e6e6e;
+}
+
+#a1:hover {
+background-position: 0 0;
+color:#fff;
+}
+
+#newtasktf {
+    width: 80%;
+    padding: 2% 2%;
+    box-sizing: border-box;
+    border: 1px solid #00c6ff;
+}
+
+#project_id_project_id{
+   height: 100%;
+   width: 250%;
+   span {
+    line-height: 100%;
+    text-align: left;
+   }
+}
+
+.select2-selection {
+   border-radius: 0 !important;
+}
+
+.no-search .select2-search {
+    display:none
+}
+

@@ -1,34 +1,49 @@
-<h1>Задачи</h1>
+<!DOCTYPE html >
+<html>
+ <head>
+  <meta charset="utf-8" />
+   <title>Список задач</title>
+   <link href="blue.css.scss" rel="stylesheets/vendor">
+   <link href="select2.css" rel="stylesheets/vendor">
+  </head>
+ <body>
+  <div id="Header">
+   <h1>Задачи</h1>
+   <p> <%=image_tag("plus.png", alt: "Plus Image")%> </p>
+  </div>
 
-<p>
-    <%=image_tag("plus.jpg", alt: "Plus Image")%>
-</p>
-
-<% Project.all.each do |project| %>
-<p>
-  <%= project.title %>
-</p>
-<ul>
-<% project.todos.each do |todo| %>
-  <li> <%= todo.text %> </li>
-<% end %>
-</ul>
-<% end %>
-
-<div id="div1">
-<%= form_for Todo.create, id: "f1" do |f| %>
-  <h2>Новая задача</h2>
-  <p>
-    <%= f.text_field :text %>
-    <%= f.check_box :isCompleted, id: "ch1" %>
-  </p>
-  <p>
-    <%= collection_select(:project_id, :project_id, Project.all, :id, :title) %>
-    <%= f.submit '', :class => "hidden", :id => "fsb" %>
-  </p>
-  <p>
-  <a id="a1" href="javascript:void(0)" >Отмена</a>
-  <%= link_to 'Ок', href= "javascript:void(0)", id:"a2" %>
-  </p>
-<% end %>
-</div>
+  <div id= "show">
+  <% Project.all.each do |project| %>
+   <div class="project">
+    <div id= "title">
+      <p> <%= project.title %> </p>
+    </div>
+    <ul>
+    <% project.todos.each do |todo| %>       
+	<%= form_for todo, method: :patch do |f|%>		
+	<p> <%= check_box( "", todo.id, {checked: todo.isCompleted}) %>
+        <label for= "_<%=todo.id %>", class=strike-text<%=todo.isCompleted %>><%= todo.text %></label>
+	<%= f.submit '', :id => "fsbch" %></p>
+        <% end %>
+    <% end %>
+    </ul>
+   </div>
+  <% end %>
+  </div>
+	
+  <div id="div1">
+   <%= form_for Todo.create, id: "f1" do |f| %>
+    <h2>Новая задача</h2>
+    <p> <%= f.text_field :text, id:"newtasktf", placeholder:"Название задачи..." %>
+        <%= f.check_box :isCompleted, id: "ch1" %>
+    </p>
+    <p> <%= collection_select(:project_id, :project_id, Project.all, :id, :title) %>
+	<%= f.submit '', :class => "hidden", :id => "fsb" %>
+    </p>
+    <p> <a id="a1" href="javascript:void(0)" >Отмена</a>
+	<%= link_to 'Ок', href= "javascript:void(0)", id:"a2" %>
+    </p>
+   <% end %>
+  </div>
+ </body>
+</html>

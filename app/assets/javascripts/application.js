@@ -13,11 +13,14 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require_select2
+//= require_select2_locale_pt-RU
 //= require_tree .
+
 
 $(document).ready(function() {
 	$("#div1").hide();
-	$("#ch1").hide();
+	$("input[id='fsbch']").hide();	
 	$("#fsb").hide();
 	$("img").bind('click', function() {
 		$("#div1").show();
@@ -28,6 +31,27 @@ $(document).ready(function() {
 	$("#a2").click(function() {
 		$("#fsb").click();
 		$("#div1").hide();
+	});
+        $('input').iCheck({
+        	checkboxClass: 'icheckbox_minimal-blue',
+    		radioClass: 'iradio_minimal-blue'
+        });
+        $("form[id^='edit_todo_']").on('click',function() {
+		$(this).submit();
+	});
+	$(".iCheck-helper").click(function() {
+		$(this).parent().parent().parent().submit();
+	});
+	$("div:has('#ch1')").hide();
+	$("input[id='fsbch']").click(function() {
+		$(this).parent().parent().parent().submit();
+	});
+	$("label[for^='_']").click(function() {
+		$(this).parent().parent().submit();
+	});
+	$('select').select2({
+		placeholder: "Выберите категорию...",
+		dropdownCssClass: 'no-search'
 	});
 });
 
