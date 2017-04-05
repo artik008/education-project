@@ -50,7 +50,7 @@
   left:0px;
   z-index: 102;
   width:100%;
-  height:8%;
+  height:70px;
   color:white;
   position:fixed;
   background-color:blue;
@@ -58,10 +58,8 @@
 
 #Header h1 {
   width:100%;
-  height:10%;
   position: absolute;
   text-align:center;
-  vertical-align:top;
 }
 
 #Header img {
@@ -156,5 +154,9 @@ color:#fff;
 
 .no-search .select2-search {
     display:none
+}
+
+#delete {
+    text-align:right;
 }
 

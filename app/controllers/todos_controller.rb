@@ -15,6 +15,12 @@ class TodosController < ApplicationController
     @todo.update({:isCompleted => @isCompleted})
     redirect_to "/"
   end
+
+  def destroy
+    @todo = Todo.find(params[:id])
+    @todo.destroy
+    redirect_to "/"
+  end
  
   private
     def todo_params

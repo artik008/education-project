@@ -23,7 +23,9 @@
 	<%= form_for todo, method: :patch do |f|%>		
 	<p> <%= check_box( "", todo.id, {checked: todo.isCompleted}) %>
         <label for= "_<%=todo.id %>", class=strike-text<%=todo.isCompleted %>><%= todo.text %></label>
-	<%= f.submit '', :id => "fsbch" %></p>
+	<%= f.submit '', :id => "fsbch" %>
+	<%= link_to 'X', todo,
+              method: :delete, :id => "delete" %></p>
         <% end %>
     <% end %>
     </ul>
