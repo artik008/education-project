@@ -25,3 +25,11 @@
       isCompleted: false
     - text: 'Подготовиться к поездке'
       isCompleted: false
+ - title: 'Учёба'
+   todos:
+    - text: 'Сдать экзамен'
+      isCompleted: false
+    - text: 'Пробить пару'
+      isCompleted: false
+    - text: 'Купить курсач'
+      isCompleted: false
